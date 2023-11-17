@@ -5,7 +5,7 @@ function InputBar({ handleGuess, gameOver }) {
 
   return (
     <form
-      className={`guess-input-wrapper ${gameOver && "disabled"}`}
+      className="guess-input-wrapper"
       onSubmit={(event) => {
         event.preventDefault();
         if (guess.length < 5) {
@@ -20,6 +20,7 @@ function InputBar({ handleGuess, gameOver }) {
       <input
         id="guess-input"
         type="text"
+        disabled={gameOver}
         value={guess}
         onChange={(event) => {
           let newGuess = event.target.value;
